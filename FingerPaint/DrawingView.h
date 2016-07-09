@@ -16,4 +16,6 @@
 
 @property UIBezierPath *path;
 
+@property NSMutableArray *paths;
+
 @end

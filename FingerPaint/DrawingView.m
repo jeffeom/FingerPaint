@@ -14,6 +14,8 @@
 // An empty implementation adversely affects performance during animation.
 
 - (void)drawRect:(CGRect)rect {
+    
+    self.path = [[UIBezierPath alloc] init];
         
     [self.path moveToPoint:self.startPoint];
     [self.path addLineToPoint:self.currentPoint];
@@ -25,6 +27,10 @@
     
     [[UIColor blueColor] setStroke];
     [self.path stroke];
+        
+    for (UIBezierPath *pastPath in self.paths){
+        [pastPath stroke];
+    }
 
     
 }

@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.drawingView.path = [[UIBezierPath alloc] init];
+    self.drawingView.paths = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +58,7 @@
             NSLog(@"Gesture recorded: (%f, %f)", self.locationFinger.x, self.locationFinger.y);
             self.drawingView.currentPoint = self.locationFinger;
             [self.drawingView setNeedsDisplay];
+            [self.drawingView.paths addObject:self.drawingView.path];
             
             break;
         }
